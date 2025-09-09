@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "project1"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.116.1"
+uvicorn = "^0.35.0"
+gunicorn = "^23.0.0"
+alembic = "^1.16.5"
+sqlalchemy = "^2.0.43"
+pydantic-settings = "^2.10.1"
+asyncpg = "^0.30.0"
+pydantic = {extras = ["email"], version = "^2.11.7"}
+python-jose = "^3.5.0"
+bcrypt = "^4.3.0"
+passlib = "^1.7.4"
+python-multipart = "^0.0.20"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
+httpx = "^0.28.1"
+black = "^25.1.0"
+pytest-asyncio = "^1.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
