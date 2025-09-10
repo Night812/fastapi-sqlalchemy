@@ -1,4 +1,5 @@
 version: "3.0"
+
 services:
   db:
     container_name: "db"
@@ -12,6 +13,7 @@ services:
       - "5433:5432"
     networks:
       - custom
+
   test_db:
     container_name: "test_db"
     image: postgres:14.1-alpine
@@ -24,6 +26,7 @@ services:
       - "5434:5432"
     networks:
       - custom
+      
 networks:
   custom:
     driver: bridge
