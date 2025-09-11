@@ -6,7 +6,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from pydantic import EmailStr
 from fastapi import Depends, HTTPException, status
 
-from core.models import db_helper, User
+from src.core.models.db_helper import db_helper
+from src.core.models.user import User
 
 
 async def user_by_email(

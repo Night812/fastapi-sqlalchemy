@@ -10,9 +10,10 @@ from pydantic import EmailStr
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from auth.token import TokenData
-from core.models import User, db_helper
-from core.config import settings
+from src.auth.token import TokenData
+from src.core.models.db_helper import db_helper
+from src.core.models.user import User
+from src.core.config import settings
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/token")
 

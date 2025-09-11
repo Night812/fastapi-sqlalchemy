@@ -1,7 +1,7 @@
 from sqlalchemy import MetaData
 from sqlalchemy.orm import DeclarativeBase, declared_attr
 
-from core.config import settings
+from ..config import settings
 
 
 class Base(DeclarativeBase):
