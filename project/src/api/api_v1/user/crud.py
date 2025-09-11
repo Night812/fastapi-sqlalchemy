@@ -2,9 +2,10 @@ from sqlalchemy import select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi import HTTPException, status
 
-from api.api_v1.user.schemas import UserCreate, UserUpdate
-from core.models import User, PortalRole
-from auth.utils import get_password_hash
+from src.api.api_v1.user.schemas import UserCreate, UserUpdate
+from src.core.models.user import User
+from src.core.models.portal_role import PortalRole
+from src.auth.utils import get_password_hash
 
 
 async def get_users(session: AsyncSession):
@@ -45,6 +46,9 @@ async def update_user_partial(
     user: User,
     session: AsyncSession,
 ):
+
+    if data.password:
+        data.password = get_password_hash(data.password)
 
     stmt = (
         update(User)

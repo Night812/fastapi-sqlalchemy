@@ -1,5 +1,3 @@
-version: "3.0"
-
 services:
   db:
     container_name: "db"
@@ -26,7 +24,15 @@ services:
       - "5434:5432"
     networks:
       - custom
-      
+  fast_api_app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - custom
+
 networks:
   custom:
     driver: bridge

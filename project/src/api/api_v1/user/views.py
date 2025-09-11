@@ -4,9 +4,10 @@ from fastapi import APIRouter, Depends
 from sqlalchemy import update
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from api.api_v1.user.schemas import ShowUser, UserCreate, UserUpdate
-from core.models import User, db_helper
-from auth.utils import get_current_active_user
+from src.api.api_v1.user.schemas import ShowUser, UserCreate, UserUpdate
+from src.core.models.db_helper import db_helper
+from src.core.models.user import User
+from src.auth.utils import get_current_active_user
 from .dependencies import user_by_email
 from . import crud
 

@@ -3,8 +3,7 @@ import uuid
 from fastapi import HTTPException, status
 from pydantic import BaseModel, ConfigDict, EmailStr, field_validator
 
-from core.models import PortalRole
-from core.config import LETTER_MATCH_PATTERN
+from src.core.config import LETTER_MATCH_PATTERN
 
 
 class TunedModel(BaseModel):

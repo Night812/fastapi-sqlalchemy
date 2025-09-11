@@ -1,4 +1,4 @@
-FROM 3.12.11-alpine3.22
+FROM python:3.12-bookworm
 
 WORKDIR /application
 
@@ -8,7 +8,7 @@ RUN poetry config virtualenvs.create false
 
 COPY pyproject.toml poetry.lock ./
 
-RUN poetry install
-COPY app/. .
+RUN poetry install --without dev
+COPY project/ .
 
 CMD ["python", "main.py"]
